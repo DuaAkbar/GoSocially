@@ -1,4 +1,4 @@
-# GoSocialy 🌐
+# GoSocially 🌐
 
 A full-stack social media web application built with the MERN stack, where users can share posts, interact through comments, and manage their own content.
 
