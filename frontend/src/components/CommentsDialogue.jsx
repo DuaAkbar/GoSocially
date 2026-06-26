@@ -18,7 +18,7 @@ function CommentsDialog({ isOpen, onClose, postId, comments, fetchComments, isCo
       comment: newComment,
     };
 
-    const response = await axios.post("http://localhost:5000/api/v1/comments/add-comments", body, {
+    const response = await axios.post("https://gosocially-production.up.railway.app/api/v1/comments/add-comments", body, {
       headers: {
         Authorization: `Bearer ${token}`,
       },

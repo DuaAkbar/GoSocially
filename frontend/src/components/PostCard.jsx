@@ -54,7 +54,7 @@ function PostCard({ postData, myposts = false, fetchPosts }) {
     try {
       setIsCommentsLoading(true);
       const { data } = await axios.get(
-        `http://localhost:5000/api/v1/comments/get-comments-by-post/${postData?._id}`,
+        `https://gosocially-production.up.railway.app/api/v1/comments/get-comments-by-post/${postData?._id}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,

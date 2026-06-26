@@ -23,7 +23,7 @@ function UpdateProfile() {
       const token = localStorage.getItem("token");
       try {
         const response = await axios.put(
-          `http://localhost:5000/api/v1/profile/update/${userId}`,
+          `https://gosocially-production.up.railway.app/api/v1/profile/update/${userId}`,
           body,
           { headers: { Authorization: `Bearer ${token}` } }
         );
@@ -45,7 +45,7 @@ function UpdateProfile() {
       const token = localStorage.getItem("token");
       try {
         const response = await axios.put(
-          `http://localhost:5000/api/v1/profile/update-password/${userId}`,
+          `https://gosocially-production.up.railway.app/api/v1/profile/update-password/${userId}`,
           body,
           { headers: { Authorization: `Bearer ${token}` } }
         );

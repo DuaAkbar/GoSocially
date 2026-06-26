@@ -15,7 +15,7 @@ function Home() {
       setIsLoading(true);
       const token = localStorage.getItem("token")
       const responce = await axios.get(
-        "http://localhost:5000/api/v1/posts/get",
+        "https://gosocially-production.up.railway.app/api/v1/posts/get",
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -38,7 +38,7 @@ function Home() {
     } else {
       try {
         const response = await axios.post(
-          "http://localhost:5000/api/v1/auth/check-auth",
+          "https://gosocially-production.up.railway.app/api/v1/auth/check-auth",
           {
             token,
           },

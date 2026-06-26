@@ -22,7 +22,7 @@ const Register = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/v1/auth/register",
+        "https://gosocially-production.up.railway.app/api/v1/auth/register",
         body,
       );
       if(response.data.success === true){
@@ -46,7 +46,7 @@ const Register = () => {
     const token = localStorage.getItem('token')
     if (token != null) {
       try {
-        const responce = await axios.post("http://localhost:5000/api/v1/auth/check-auth", {
+        const responce = await axios.post("https://gosocially-production.up.railway.app/api/v1/auth/check-auth", {
           token
         })
         if (responce.data.success === true) {

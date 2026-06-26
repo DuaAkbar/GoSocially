@@ -19,7 +19,7 @@ function SocialMediaContext({ children }) {
       setIsLoading(true);
       const token = localStorage.getItem("token");
       const responce = await axios.get(
-        "http://localhost:5000/api/v1/posts/get",
+        "https://gosocially-production.up.railway.app/api/v1/posts/get",
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -41,7 +41,7 @@ function SocialMediaContext({ children }) {
     } else {
       try {
         const response = await axios.post(
-          "http://localhost:5000/api/v1/auth/check-auth",
+          "https://gosocially-production.up.railway.app/api/v1/auth/check-auth",
           {
             token,
           },
@@ -61,7 +61,7 @@ function SocialMediaContext({ children }) {
       setIsLoading(true);
       const userId = localStorage.getItem("userId");
       const responce = await axios.get(
-        `http://localhost:5000/api/v1/posts/get-user-posts/${userId}`,
+        `https://gosocially-production.up.railway.app/api/v1/posts/get-user-posts/${userId}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -80,7 +80,7 @@ function SocialMediaContext({ children }) {
   const handleOnDelete = async (postData) => {
     try {
       await axios.delete(
-        `http://localhost:5000/api/v1/posts/delete/${postData._id}`,
+        `https://gosocially-production.up.railway.app/api/v1/posts/delete/${postData._id}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -112,7 +112,7 @@ function SocialMediaContext({ children }) {
     data.append("myfile", selectedFile);
     const token = localStorage.getItem("token");
     const response = await axios.post(
-      "http://localhost:5000/api/v1/media/upload",
+      "https://gosocially-production.up.railway.app/api/v1/media/upload",
       data,
       {
         headers: {
@@ -149,7 +149,7 @@ function SocialMediaContext({ children }) {
     const token = localStorage.getItem("token");
     console.log("BODY SENT:", body);
     const response = await axios.post(
-      "http://localhost:5000/api/v1/posts/create",
+      "https://gosocially-production.up.railway.app/api/v1/posts/create",
       body,
       {
         headers: {
@@ -185,7 +185,7 @@ function SocialMediaContext({ children }) {
     try {
       const token = localStorage.getItem("token");
       const response = await axios.put(
-        `http://localhost:5000/api/v1/posts/update/${postData?._id}`,
+        `https://gosocially-production.up.railway.app/api/v1/posts/update/${postData?._id}`,
         body,
         { headers: { Authorization: `Bearer ${token}` } },
       );
