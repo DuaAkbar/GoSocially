@@ -14,6 +14,16 @@ connectToDb();
 
 const server = express();
 
+server.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "https://go-socially-five.vercel.app");
+  res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+  res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
+  res.header("Access-Control-Allow-Credentials", "true");
+  if (req.method === "OPTIONS") {
+    return res.status(200).end();
+  }
+  next();
+});
 server.use(cors({
     origin: "https://go-socially-five.vercel.app",  // Your frontend URL (remove trailing slash)
     methods: ["GET", "POST", "PUT", "DELETE"],
