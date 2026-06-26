@@ -75,6 +75,7 @@ function CreatePost() {
   const {
     imageLoading,
     postImage,
+    SetpostImage,
     postContent,
     setPostContent,
     postTags,
@@ -158,7 +159,7 @@ function CreatePost() {
                   {/* X delete button */}
                   <button
                     type="button"
-                    onClick={() => postImage("")}
+                    onClick={() => SetpostImage("")}
                     className="absolute top-2 right-2 w-8 h-8 bg-black bg-opacity-60 hover:bg-opacity-80 text-white rounded-full flex items-center justify-center transition shadow-md"
                   >
                     <svg
