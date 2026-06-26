@@ -15,7 +15,7 @@ connectToDb();
 const server = express();
 
 server.use(cors({
-    origin: "http://localhost:5173",  // Your frontend URL (remove trailing slash)
+    origin: "https://go-socially-five.vercel.app",  // Your frontend URL (remove trailing slash)
     methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: [
         "Content-Type",
