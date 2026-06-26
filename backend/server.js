@@ -4,7 +4,6 @@ import dotenv from "dotenv";
 import authRouter from "./routes/authRoute.js";
 import postRouter from "./routes/postRoute.js";
 import mediaRouter from "./routes/mediaRoute.js";
-import cors from "cors";
 import connectToDb from "./database/DatabaseConnection.js";
 import commentsRouter from "./routes/commentsRouter.js";
 import profileRouter from "./routes/profileRoutes.js";
@@ -24,15 +23,7 @@ server.use((req, res, next) => {
   }
   next();
 });
-server.use(cors({
-    origin: "https://go-socially-five.vercel.app",  // Your frontend URL (remove trailing slash)
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    allowedHeaders: [
-        "Content-Type",
-        "Authorization"  // Add this!
-    ],
-    credentials: true  // Optional: if you need to send cookies
-}))
+
 server.use(express.json());
 server.use("/api/v1/auth", authRouter);
 
