@@ -24,6 +24,7 @@ server.use(cors({
     credentials: true  // Optional: if you need to send cookies
 }))
 server.use(express.json());
+server.options('*', cors());
 server.use("/api/v1/auth", authRouter);
 
 server.use((req, res, next) => {
